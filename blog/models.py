@@ -26,6 +26,8 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
     tags = models.ManyToManyField(Tag, blank=True)
     title = models.CharField(max_length=255)
+    image = models.ImageField(
+        upload_to='post_images/', null=True, blank=True)
     content = models.TextField()
     description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -43,3 +45,7 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class ContentImage(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.PROTECT)
+    content_image = models.ImageField(upload_to='post_content_images/')

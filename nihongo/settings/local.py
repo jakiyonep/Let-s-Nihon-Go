@@ -6,7 +6,7 @@ SECRET_KEY = '$98@1hoo@6ndu=$5q1il6p6ixp)$qo_^=asdqj(vvjackq4!q^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lets-nihon-go.herokuapp.com','.herokuapp.com']
+ALLOWED_HOSTS = ['lets-nihon-go.herokuapp.com','.herokuapp.com','127.0.0.1']
 
 DATABASES = {
     'default': {
