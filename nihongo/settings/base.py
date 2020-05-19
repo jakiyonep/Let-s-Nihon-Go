@@ -130,7 +130,7 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'media_root')
 STATIC_URL = '/static/'
 
-django_heroku.settings(locals(), staticfiles=False)
+
 try:
     from .local_settings import *
 except ImportError:
