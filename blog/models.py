@@ -47,5 +47,5 @@ class Post(models.Model):
         return self.title
 
 class ContentImage(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.PROTECT)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
     content_image = models.ImageField(upload_to='post_content_images/')
