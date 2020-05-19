@@ -1,5 +1,5 @@
 <django-project-name>/settings/local.py
-staticfiles/
+
 
 # Created by https://www.gitignore.io/api/django,python
 # Edit at https://www.gitignore.io/?templates=django,python
