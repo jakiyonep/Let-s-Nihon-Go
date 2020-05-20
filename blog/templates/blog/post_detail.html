@@ -13,7 +13,9 @@
       {% for tag in object.tags.all %}
         {{ tag.name }},
       {% endfor %}
+      {% if post.image %}
       <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}">
+      {% endif %}
       <hr>
       <div class="post-content">
         {{ object.content| markdown_to_html }}
