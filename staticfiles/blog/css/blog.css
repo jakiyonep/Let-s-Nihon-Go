@@ -11,6 +11,11 @@
   margin-top: 100px;
 }
 
+/*post-info*/
+.post-info img{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
 
 
@@ -44,10 +49,10 @@
       text-decoration: none;
     }
 
-.post-content p, h1, h2, h3, h4, h5{
+.post-content p,.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5{
   margin-bottom: 9vh;
 }
-.post-content h1, h2, h3, h4, h5{
+.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5{
   margin-top: 30vh;
 }
 .ed p, .ed h1, .ed h2, .ed h3, .ed h4,.ed h5{
@@ -55,6 +60,9 @@
 }
 .post-content h1, .post-content  h2, .post-content h3, .post-content h4,.post-content  h5{
   border-bottom: 10px solid rgb(255, 253, 215);
+}
+.post-content ul{
+  margin-bottom: 9vh;
 }
 
 .bg-blue{
