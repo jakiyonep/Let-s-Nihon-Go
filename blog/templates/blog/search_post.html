@@ -10,7 +10,7 @@
       <h1 class="mb-4">{% if query %}{{ query }}{% endif %}</h1>
       <p class="text-right">
         {{ paginator.count }} posts found <br>
-        No.{{ page_obj.start_index }}- No.{{ page_obj.end_index }} displayed
+        {{ page_obj.start_index }}-{{ page_obj.end_index }}
        </p>
       {% include "blog/snippets/main_post_list.html" %}
       {% include "blog/snippets/pagination.html" %}

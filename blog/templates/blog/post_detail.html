@@ -11,7 +11,7 @@
       <p>{{ object.published_at|date }}</p>
       <p>{{ object.category.name }}</p>
       {% for tag in object.tags.all %}
-        <p>{{ tag.name }}</p>
+        {{ tag.name }},
       {% endfor %}
       <hr>
       <div class="post-content">

@@ -40,8 +40,12 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'markdownx',
 ]
+
 MARKDOWNX_MARKDOWN_EXTENSIONS = [
     'markdown.extensions.toc',
+    'markdown.extensions.sane_lists',
+    'markdown.extensions.nl2br',
+    'markdown.extensions.extra',
 ]
 
 MIDDLEWARE = [
