@@ -44,6 +44,7 @@
     }
     .toc ul{
       margin-top: 25px;
+      padding-left: auto !important;
     }
     .toc li{
       list-style: none;
@@ -64,9 +65,14 @@
 .post-content h1, .post-content  h2, .post-content h3, .post-content h4,.post-content  h5{
   border-bottom: 10px solid rgb(255, 253, 215);
 }
-.post-content ul{
+.post-content ul, .post-content ol{
   margin-bottom: 9vh;
+
 }
+.post-content li{
+  
+}
+
 
 .bg-blue{
   background-color: rgb(194, 216, 246);
