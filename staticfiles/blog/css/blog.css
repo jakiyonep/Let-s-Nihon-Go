@@ -77,7 +77,9 @@
 img{
   width:100%;
 }
-
+.ed ul, .ed ol{
+  margin-bottom: 0;
+}
 .bg-blue{
   background-color: rgb(194, 216, 246);
   border: 1px dashed  blue;
