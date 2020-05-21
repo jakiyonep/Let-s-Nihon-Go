@@ -1,8 +1,9 @@
 {% load static %}
+<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
 {% for post in object_list %}
 {% if user.is_authenticated or post.is_public %}
 
-<div class="card mb-3">
+<div class="card mb-3 post-card">
   {% if post.image %}
   <a href="{% url 'blog:post_detail' post.id %}">
     <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}">
