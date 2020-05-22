@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'cloudinary',
+    'cloudinary_storage',
     'markdownx',
 ]
 
@@ -154,3 +156,13 @@ if not DEBUG:
 if 'DATABASE_URL' in os.environ:
     import dj_database_url
     DATABASES = {'default': dj_database_url.config()}
+
+
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dcvzzpl08',
+    'API_KEY': '679519463974657',
+    'API_SECRET': 'W0invI5XP30k6IZlyUkMRnsmNyc'
+}
