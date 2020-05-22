@@ -1,37 +1,43 @@
 {% load static %}
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167369199-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167369199-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-167369199-1');
+    </script>
 
-  gtag('config', 'UA-167369199-1');
-</script>
+    <link rel="stylesheet" href="{% static 'blog/css/main_post_list.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+    </head>
+    {% for post in object_list %}
+    {% if user.is_authenticated or post.is_public %}
 
-<link rel="stylesheet" href="{% static 'blog/css/main_post_list.min.css' %}">
-<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
-{% for post in object_list %}
-{% if user.is_authenticated or post.is_public %}
+    <div class="card mb-3 post-card">
+      {% if post.image %}
+      <a href="{% url 'blog:post_detail' post.id %}">
+        <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}">
+      </a>
+      {% endif %}
+      <div class="card-body">
+        {% if not post.is_public %}
+        <h5><span class="badge badge-secondary">Draft</span></h5>
+        {% endif %}
+        <a href="{% url 'blog:post_detail' post.id %}">
+          <h5 class="card-title">{{ post.title }}</h5>
+        </a>
+        <p class="card-text">{{ post.published_at|date }}</p>
+      </div>
+    </div>
 
-<div class="card mb-3 post-card">
-  {% if post.image %}
-  <a href="{% url 'blog:post_detail' post.id %}">
-    <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}">
-  </a>
-  {% endif %}
-  <div class="card-body">
-    {% if not post.is_public %}
-    <h5><span class="badge badge-secondary">Draft</span></h5>
     {% endif %}
-    <a href="{% url 'blog:post_detail' post.id %}">
-      <h5 class="card-title">{{ post.title }}</h5>
-    </a>
-    <p class="card-text">{{ post.published_at|date }}</p>
-  </div>
-</div>
-
-{% endif %}
-{% empty %}
-<p>No post yet</p>
-{% endfor %}
+    {% empty %}
+    <p>No post yet</p>
+    {% endfor %}
+</html>

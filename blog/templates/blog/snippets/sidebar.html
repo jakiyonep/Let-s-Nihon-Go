@@ -1,5 +1,5 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+
 <div class="card mb-5">
   <div class="card-header">
     Category
@@ -8,7 +8,7 @@
     {% for category in categories|dictsort:"id" %}
     <li class="list-group-item d-flex justify-content-between align-items-center">
       <a href="{% url 'blog:category_post' category.slug %}" class="card-link">{{ category.name }}</a>
-      <span class="badge badge-primary badge-pill">{{ category.num_posts }}</span>
+      <span class="badge btn-info badge-pill">{{ category.num_posts }}</span>
     </li>
     {% endfor %}
   </ul>
@@ -22,7 +22,7 @@
     {% for tag in tags|dictsortreversed:"num_posts"|slice:":5" %}
     <li class="list-group-item d-flex justify-content-between align-items-center">
       <a href="{% url 'blog:tag_post' tag.slug %}" class="card-link">{{ tag.name }}</a>
-      <span class="badge badge-primary badge-pill">{{ tag.num_posts }}</span>
+      <span class="badge btn-info badge-pill">{{ tag.num_posts }}</span>
     </li>
     {% endfor %}
   </ul>
