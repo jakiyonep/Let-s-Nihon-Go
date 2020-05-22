@@ -47,10 +47,16 @@
     margin-bottom: 8vh
     ul, ol
       margin-bottom: 0
-    li
-      list-style: none
-      &::before
-        content: "-"
+    ul
+      li
+        list-style: none
+        &::before
+          content: "-"
+    ol
+      li
+        list-style: inherit
+        &::before
+          content: ""
   .bg-blue
     background-color: rgb(194, 216, 246)
     width: 100%
