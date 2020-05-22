@@ -3,28 +3,8 @@
   font-family: "hiragino";
   box-sizing: border-box;
 }
-.logo{
-  font-family: "Noto Sans JP";
-  color: green;
-}
 .container{
   margin-top: 100px;
-}
-/*navbar*/
-.sticky-menu {
-  position:sticky;
-  top:0;
-  transition:.5s;
-  z-index: 3;
-}
-/* sidebar*/
-
-/*post-card*/
-.post-card{
-  background-color: rgb(235, 250, 255);
-}
-.post-card .card-title{
-  color: ;rgb(88, 142, 245);
 }
 /*post-info*/
 .post-info{
@@ -37,11 +17,59 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*post-detail*/
 
 .post-content{
   margin-top:150px;
   margin-bottom: 150px;
+}
+
+
+
+.post-content p,.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5{
+  margin-bottom: 9vh;
+}
+
+
+.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5{
+  margin-top: 30vh;
+}
+
+
+
+.ed p, .ed h1, .ed h2, .ed h3, .ed h4,.ed h5{
+  margin-bottom: 0;
+}
+.post-content h1, .post-content  h2, .post-content h3, .post-content h4,.post-content  h5{
+  border-bottom: 10px solid rgb(255, 253, 215);
+}
+
+
+
+.post-content ul, .post-content ol{
+  margin-bottom: 9vh;
+
+}
+.post-content li{
+
+}
+img{
+  width:100%;
 }
   .toc{
     margin-top:80px;
@@ -60,6 +88,11 @@
     .toc ul{
       margin-top: 25px;
       padding-left: auto !important;
+      margin-bottom: 25px;
+    }
+    .toc ol{
+      margin-top: 25px;
+      margin-bottom: 25px;
     }
     .toc li{
       list-style: none;
@@ -68,34 +101,28 @@
       text-decoration: none;
     }
 
-.post-content p,.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5{
-  margin-bottom: 9vh;
-}
-.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5{
-  margin-top: 30vh;
-}
-.ed p, .ed h1, .ed h2, .ed h3, .ed h4,.ed h5{
-  margin-bottom: 0;
-}
-.post-content h1, .post-content  h2, .post-content h3, .post-content h4,.post-content  h5{
-  border-bottom: 10px solid rgb(255, 253, 215);
-}
-.post-content ul, .post-content ol{
-  margin-bottom: 9vh;
-
-}
-.post-content li{
-
-}
-img{
-  width:100%;
+.ed{
+  margin-bottom: 8vh;
 }
 .ed ul, .ed ol{
   margin-bottom: 0;
 }
+.ed li{
+  list-style:none;
+}
+  .ed li::before{
+    content:"-"
+  }
 .bg-blue{
   background-color: rgb(194, 216, 246);
-  border: 1px dashed  blue;
+  width:100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-bottom: 8vh;
+}
+.bg-grey{
+  background-color: rgb(228, 228, 228);
   width:100%;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -104,4 +131,19 @@ img{
 }
 .uline-blue{
   border-bottom: 2px solid rgb(194, 216, 246);
+}
+
+.okay::before{
+  content:"\f00c";
+  font-family: "FontAwesome";
+  font-weight: 400;
+  color: rgb(136, 238, 69);
+  list-style: none;
+}
+.wrong::before{
+  content:'\f00d';
+  font-family: "FontAwesome";
+  color: rgb(215, 16, 16);
+  font-weight: 400;
+  list-style: none;
 }

@@ -1,5 +1,5 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+<link rel="stylesheet" href="{% static 'blog/css/main_post_list.min.css' %}">
 {% for post in object_list %}
 {% if user.is_authenticated or post.is_public %}
 

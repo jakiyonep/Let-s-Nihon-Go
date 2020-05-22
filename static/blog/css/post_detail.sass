@@ -1,0 +1,86 @@
+.post-info
+  margin-bottom: 50px
+  img
+    max-width: 100%
+    margin-top: 30px
+    margin-bottom: 30px
+  .post-content
+    margin-top: 150px
+    margin-bottom: 150px
+    p, h1, h2, h3, h4, h5
+      margin-bottom: 8vh
+    h1, h2, h3, h4, h5
+      margin-bottom: 25vh
+      border-bottom: 10px solid rgb(255, 253, 215)
+    ul, ol
+      margin-bottom: 9vh
+    .toc
+      margin-top: 80px
+      margin-bottom: 80px
+      padding-top: 20px
+      padding-bottom: 20px
+      background-color: rgb(255, 253, 215)
+      border-radius: 20px
+
+      &::before
+        content: 'Contents'
+        width: 90%
+        margin-left: 20px
+        height: 100px
+
+      ul
+        margin-top: 25px
+        padding-left: auto !important
+        margin-bottom: 25px
+
+      ol
+        margin-top: 25px
+        margin-bottom: 25px
+
+      li
+        list-style: none
+
+      a
+        text-decoration: none
+
+  .ed
+    margin-bottom: 8vh
+    ul, ol
+      margin-bottom: 0
+    li
+      list-style: none
+      &::before
+        content: "-"
+  .bg-blue
+    background-color: rgb(194, 216, 246)
+    width: 100%
+    padding-top: 10px
+    padding-bottom: 10px
+    padding-left: 10px
+    margin-bottom: 8vh
+
+  .bg-grey
+    background-color: rgb(228, 228, 228)
+    width: 100%
+    padding-top: 10px
+    padding-bottom: 10px
+    padding-left: 10px
+    margin-bottom: 9vh
+
+  .uline-blue
+    border-bottom: 2px solid rgb(194, 216, 246)
+
+
+  .okay::before
+    content: "\f00c"
+    font-family: "FontAwesome"
+    font-weight: 400
+    color: rgb(136, 238, 69)
+    list-style: none
+
+  .wrong::before
+    content: '\f00d'
+    font-family: "FontAwesome"
+    color: rgb(215, 16, 16)
+    font-weight: 400
+    list-style: none
