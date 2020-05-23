@@ -8,7 +8,7 @@
   <div class="card-header">
     Category
   </div>
-  <ul class="list-group list-group-flush">
+  <ul class="list-group list-group-flush" style="border: none;">
     {% for category in categories|dictsort:"id" %}
     <li class="list-group-item d-flex justify-content-between align-items-center" style="border: none;">
       <a href="{% url 'blog:category_post' category.slug %}" class="card-link">{{ category.name }}</a>
@@ -24,7 +24,7 @@
   </div>
   <ul class="list-group list-group-flush">
     {% for tag in tags|dictsortreversed:"num_posts"|slice:":5" %}
-    <li class="list-group-item d-flex justify-content-between align-items-center" style="border:none;">
+    <li class="list-group-item d-flex justify-content-between align-items-center" style="border: none;">
       <a href="{% url 'blog:tag_post' tag.slug %}" class="card-link">{{ tag.name }}</a>
       <span class="badge btn-info badge-pill">{{ tag.num_posts }}</span>
     </li>

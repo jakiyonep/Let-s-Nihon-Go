@@ -153,7 +153,7 @@ if not DEBUG:
     django_heroku.settings(locals())
 
     AWS_LOCATION = 'static'
-    STATICFILES_STORAGE = ''
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
     # メディアファイルの設定。今回は「project」というプロジェクト名の例
