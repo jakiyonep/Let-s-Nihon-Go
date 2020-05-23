@@ -141,7 +141,7 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',  # 1日はそのキャッシュを使う
 }
 S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
-
+AWS_QUERYSTRING_AUTH = False
 
 try:
     from .local import *
