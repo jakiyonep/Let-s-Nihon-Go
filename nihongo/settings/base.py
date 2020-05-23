@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-DEBUG = True
+DEBUG = False
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = ['127.0.0.1']
@@ -131,16 +131,7 @@ USE_TZ = True
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'media_root')
-MEDIA_URL = '/media/'
 
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles',)
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
 
 AWS_ACCESS_KEY_ID = 'AKIA5LGKISD4CG2MEKG7'
 AWS_SECRET_ACCESS_KEY = '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'
