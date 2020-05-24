@@ -148,10 +148,10 @@ MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
 if DEBUG:
     STATIC_URL = '/static/'
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' #if not working, put this line above the if statement
+
 else:
     STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' #if not working, put this line above the if statement
 
 
 
