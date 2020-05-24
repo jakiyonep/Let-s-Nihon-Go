@@ -16,6 +16,7 @@ import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -24,6 +25,7 @@ DEBUG = False
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = ['127.0.0.1']
+
 
 # Application definition
 
@@ -79,6 +81,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'nihongo.wsgi.application'
 
+
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -88,6 +91,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -107,6 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -120,13 +125,16 @@ USE_L10N = True
 
 USE_TZ = True
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+
+AWS_ACCESS_KEY_ID = 'AKIA5LGKISD4CG2MEKG7'
+AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'newletsnihongo'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {
@@ -139,6 +147,8 @@ MEDIA_URL = S3_URL
 
 AWS_DEFAULT_ACL = 'public-read'
 
+
+
 # 共通の設定
 
 # 静的ファイルの設定
@@ -149,6 +159,10 @@ STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 # メディアファイルの設定。今回は「project」というプロジェクト名の例
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+
+
+
+
 try:
     from .local import *
 except ImportError:
@@ -156,11 +170,11 @@ except ImportError:
 
 if not DEBUG:
     import django_heroku
-
     django_heroku.settings(locals())
+
+
 
 # ie if Heroku server
 if 'DATABASE_URL' in os.environ:
     import dj_database_url
-
     DATABASES = {'default': dj_database_url.config()}
