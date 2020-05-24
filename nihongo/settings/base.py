@@ -133,14 +133,30 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
-AWS_ACCESS_KEY_ID = 'AKIA5LGKISD4CG2MEKG7'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'newletsnihongo'
+AWS_ACCESS_KEY_ID = 'AKIA5LGKISD4FXUVE7GU'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'letsnihongobaru'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',  # 1日はそのキャッシュを使う
 }
 S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+AWS_LOCATION = 'static'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+# 静的ファイルの設定
+
+if DEBUG:
+    STATIC_URL = '/static/'
+else:
+    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+# メディアファイルの設定。今回は「project」というプロジェクト名の例
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
 
 
 try:
@@ -161,12 +177,4 @@ if 'DATABASE_URL' in os.environ:
 
 # 共通の設定
 
-# 静的ファイルの設定
-AWS_LOCATION = 'static'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
-# メディアファイルの設定。今回は「project」というプロジェクト名の例
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-MEDIA_URL = S3_URL
