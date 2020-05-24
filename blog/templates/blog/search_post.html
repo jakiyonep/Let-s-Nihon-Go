@@ -8,7 +8,7 @@
 <div class="container">
   <div class="row">
     <main class="col-md-8">
-      <h1 class="mb-4">{% if query %}{{ query }}{% endif %}</h1>
+      <h1 class="mb-4 section-title">{% if query %}{{ query }}{% endif %}</h1>
       <p class="text-right">
         {{ paginator.count }} posts found <br>
         {{ page_obj.start_index }}-{{ page_obj.end_index }}

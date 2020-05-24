@@ -16,7 +16,7 @@
 <div class="container">
   <div class="row">
     <main class="col-md-8">
-      <h1 class="mb-5">All tags</h1>
+      <h1 class="mb-5 section-title">All tags</h1>
       <ul>
         {% for tag in object_list %}
         <li style="list-style:none; margin-bottom:7px;"><a href="{% url 'blog:tag_post' tag.slug %}">{{ tag.name }} ({{ tag.num_posts }})</a></li>
