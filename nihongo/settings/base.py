@@ -148,13 +148,14 @@ MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
 if DEBUG:
     STATIC_URL = '/static/'
+    STATICFILES_STORAGE='django.contrib.staticfiles.storage.StaticFilesStorage'
 else:
     STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
-# メディアファイルの設定。今回は「project」というプロジェクト名の例
+
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
