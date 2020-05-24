@@ -130,9 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# add
 
-# add end
 
 
 AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
