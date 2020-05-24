@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-DEBUG = True
+DEBUG = False
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = ['127.0.0.1']
@@ -130,8 +130,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# add
 
-
+# add end
 
 AWS_ACCESS_KEY_ID = 'AKIA5LGKISD4FXUVE7GU'
 AWS_SECRET_ACCESS_KEY = '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'
@@ -147,10 +148,11 @@ MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
 if DEBUG:
     STATIC_URL = '/static/'
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' #if not working, put this line above the if statement
 else:
     STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 
 # メディアファイルの設定。今回は「project」というプロジェクト名の例
