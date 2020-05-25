@@ -38,7 +38,7 @@ table
 
 
 
-/*general*/
+/*base*/
 *
   color: rgb(115, 115, 115)
   font-family: "hiragino"
@@ -79,6 +79,7 @@ $base-margin: 9vh
     h3, h4, h5
       margin-bottom: 10vh
       font-size: 1.3em
+
     ul, ol
       margin-bottom: $base-margin
     table
@@ -99,30 +100,24 @@ $base-margin: 9vh
       padding-bottom: $base-padding
       background-color: rgb(255, 253, 215)
       border-radius: $radius
-
       &::before
         content: 'Contents'
         width: 90%
         margin-left: 20px
         height: 100px
-
       ul
         margin-top: 25px
         padding-left: 2em
         margin-bottom: 25px
-
       ol
         margin-top: 25px
         margin-bottom: 25px
-
       li
         list-style: none
         margin-bottom: $li-margin
-
       a
         text-decoration: none
         color: green
-
   .ed
     margin-bottom: $base-margin
     ul, ol
@@ -132,7 +127,7 @@ $base-margin: 9vh
       border-bottom: $li-margin
     ul
       li
-        list-style: inherit
+        list-style: initial
         border-bottom: $li-margin
         &::before
           content: "-"

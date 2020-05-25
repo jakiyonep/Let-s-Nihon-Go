@@ -28,7 +28,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     image = models.ImageField(
         upload_to='post_images/', null=True, blank=True)
-    content = MarkdownxField('content', help_text="markdown")
+    content = models.TextField(default="a")
     description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

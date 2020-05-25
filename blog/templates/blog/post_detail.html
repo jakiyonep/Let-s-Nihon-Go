@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load markdown %}
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'blog/css/style.min.css' %}">
@@ -18,7 +17,7 @@
       {% endif %}
       <hr>
       <div class="post-content">
-        {{ object.content| markdown_to_html }}
+        {{ object.content| safe}}
       </div>
       <hr>
     </main>
