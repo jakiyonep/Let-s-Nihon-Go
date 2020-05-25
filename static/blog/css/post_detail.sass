@@ -1,3 +1,5 @@
+$base-padding: 4vh
+$blue: rgb(223, 249, 254)
 
 .post-info
   margin-bottom: 50px
@@ -9,17 +11,22 @@
     margin-top: 150px
     margin-bottom: 150px
     p, h1, h2, h3, h4, h5
-      margin-bottom: 8vh
-    h1, h2, h3, h4, h5
-      margin-bottom: 25vh
-      border-bottom: 10px solid rgb(255, 253, 215)
+      margin-bottom: 6vh
+    h1, h2,
+      margin-bottom: 9vh
+      border-left: 5px solid  $blue
+      padding-left: 1em
+      font-size: 1.5em
+    h3, h4, h5
+      margin-bottom: 10vh
+      font-size: 1.3em
     ul, ol
       margin-bottom: 9vh
     .toc
       margin-top: 80px
       margin-bottom: 80px
-      padding-top: 20px
-      padding-bottom: 20px
+      padding-top: $base-padding
+      padding-bottom: $base-padding
       background-color: rgb(255, 253, 215)
       border-radius: 20px
 
@@ -31,7 +38,8 @@
 
       ul
         margin-top: 25px
-        padding-left: auto !important
+        padding-left: 2em
+
         margin-bottom: 25px
 
       ol
@@ -40,6 +48,7 @@
 
       li
         list-style: none
+        margin-bottom: 1em
 
       a
         text-decoration: none
@@ -61,32 +70,30 @@
         &::before
           content: ""
   .bg-blue
-    background-color: rgb(194, 216, 246)
+    background-color: $blue
     width: 100%
-    padding-top: 10px
-    padding-bottom: 10px
+    padding-top: $base-padding
+    padding-bottom: $base-padding
     padding-left: 10px
-    margin-bottom: 8vh
+    margin-bottom: 9vh
 
   .bg-grey
     background-color: rgb(228, 228, 228)
     width: 100%
-    padding-top: 10px
-    padding-bottom: 10px
+    padding-top: $base-padding
+    padding-bottom: $base-padding
     padding-left: 10px
     margin-bottom: 9vh
 
   .uline-blue
-    border-bottom: 2px solid rgb(194, 216, 246)
-
-
+    background: linear-gradient(transparent 40%, $blue 90%)
+    font-weight: bold
   .okay::before
     content: "\f00c"
     font-family: "FontAwesome"
     font-weight: 400
     color: rgb(136, 238, 69)
     list-style: none
-
   .wrong::before
     content: '\f00d'
     font-family: "FontAwesome"
