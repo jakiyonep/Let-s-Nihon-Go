@@ -53,6 +53,7 @@ table
 
 $base-padding: 4vh
 $blue: rgba(177, 197, 241, 0.71)
+$orange: rgb(255, 181, 131)
 $radius: 20px
 $li-margin: 1em
 $base-margin: 9vh
@@ -71,14 +72,16 @@ $base-margin: 9vh
     margin-bottom: 150px
     p, h1, h2, h3, h4, h5
       margin-bottom: 6vh
-    h1, h2,
+    h1, h2
       margin-bottom: $base-margin
-      border-left: 5px solid  $blue
+      border-left: 10px solid  $orange
       padding-left: 1em
-      font-size: 1.5em
-    h3, h4, h5
-      margin-bottom: 10vh
-      font-size: 1.3em
+      font-size: 1.7em
+    h3, h4
+      margin-bottom: $base-margin
+      border-left: 10px solid  $blue
+      padding-left: 1em
+      font-size: 1.7em
 
     ul, ol
       margin-bottom: $base-margin
@@ -124,7 +127,7 @@ $base-margin: 9vh
       margin-bottom: 0
     li
       list-style: none
-      border-bottom: $li-margin
+      margin-bottom: $li-margin
     ul
       li
         list-style: initial

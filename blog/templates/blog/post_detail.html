@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load markdown %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'blog/css/style.min.css' %}">
 <div class="container">
@@ -17,7 +17,7 @@
       {% endif %}
       <hr>
       <div class="post-content">
-        {{ object.content| safe}}
+        {{ object.content| markdown_to_html}}
       </div>
       <hr>
     </main>
@@ -28,3 +28,57 @@
 </div>
 
 {% endblock %}
+
+
+<table>
+  <tr>
+    <td class="first-column">新型コロナ <br> ウィルス</td>
+    <td>COVID-19</td>
+    <td>シンガタ　コロナウィルス</td>
+  </tr>
+  <tr>
+    <td class="first-column">クラスター</td>
+    <td>mass infection</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="first-column">濃厚接触者</td>
+    <td>a peron who have contacted with the COVID-19 patient</td>
+    <td>ノウコウ　セッショク　シャ</td>
+  </tr>
+  <tr>
+    <td class="first-column">ロックダウン</td>
+    <td>lockdown</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="first-column">ソーシャル <br> ディスタンス</td>
+    <td>social distancing</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="first-column">買いだめ</td>
+    <td>hoarding</td>
+    <td>かいだめ</td>
+  </tr>
+  <tr>
+    <td class="first-column">緊急事態宣言</td>
+    <td>state of emergency</td>
+    <td>キンキュウ　ジタイ　センゲン</td>
+  </tr>
+  <tr>
+    <td class="first-column">3密</td>
+    <td>3 Cs (see below)</td>
+    <td>サン　ミツ</td>
+  </tr>
+  <tr>
+    <td class="first-column">自粛</td>
+    <td>self-restraint</td>
+    <td>ジシュク</td>
+  </tr>
+  <tr>
+    <td class="first-column">自粛警察</td>
+    <td>self-restraint police (see below)</td>
+    <td>ジシュク　ケイサツ</td>
+  </tr>
+</table>
